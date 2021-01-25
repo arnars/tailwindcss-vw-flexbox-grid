@@ -81,6 +81,19 @@ const defaultOptions = {
 };
 ```
 
+All of the above can be changed via an object provided to the plugin in `tailwind.config.js` like so:
+
+```js
+// tailwind.config.js
+module.exports = {
+    plugins: [
+        require('tailwindcss-vw-flexbox-grid')({
+            // Add options here
+        }),
+    ],
+};
+```
+
 ### Column classes
 
 ```css
