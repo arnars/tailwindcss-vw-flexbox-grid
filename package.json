@@ -1,5 +1,5 @@
 {
-  "name": "tailwindcss-vw-flexbox-grid",
+  "name": "@arnars/tailwindcss-vw-flexbox-grid",
   "version": "1.0.0",
   "description": "Tailwind CSS plugin to generate flexible flexbox grids with tooling included",
   "repository": {
@@ -27,9 +27,7 @@
     "test": "echo \"No test specified\"",
     "release": "np"
   },
-  "devDependencies": {
-
-  },
   "dependencies": {
+    "tailwindcss": "^2.0.2"
   }
 }
