@@ -1,0 +1,35 @@
+{
+  "name": "tailwindcss-vw-flexbox-grid",
+  "version": "1.0.0",
+  "description": "Tailwind CSS plugin to generate flexible flexbox grids with tooling included",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnars/tailwindcss-vw-flexbox-grid.git"
+  },
+  "keywords": [
+    "tailwind",
+    "tailwindcss",
+    "plugin",
+    "tailwindcss-plugin",
+    "grid"
+  ],
+  "author": "arnars",
+  "license": "Apache-2.0",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "bugs": "https://github.com/arnars/tailwindcss-vw-flexbox-grid/issues",
+  "homepage": "https://github.com/arnars/tailwindcss-vw-flexbox-grid",
+  "scripts": {
+    "test": "echo \"No test specified\"",
+    "release": "np"
+  },
+  "devDependencies": {
+
+  },
+  "dependencies": {
+  }
+}
