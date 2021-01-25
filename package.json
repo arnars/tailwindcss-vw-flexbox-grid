@@ -21,6 +21,9 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0"
     }
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": "https://github.com/arnars/tailwindcss-vw-flexbox-grid/issues",
   "homepage": "https://github.com/arnars/tailwindcss-vw-flexbox-grid",
   "scripts": {
