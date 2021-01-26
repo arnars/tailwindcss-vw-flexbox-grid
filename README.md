@@ -10,6 +10,18 @@ This plugin requires Tailwind CSS 2.0 or later.
 yarn add tailwindcss-vw-flexbox-grid
 ```
 
+## What is it?
+
+![alt text](https://raw.githubusercontent.com/arnars/tailwindcss-vw-flexbox-grid/main/grid-image.png)
+
+This plugin creates all the columns on the above image.
+
+On the image a background is provided directly in the columns - this is why the columns all seem gapless. In reality (and depending on your usecase) you would put a `div` inside the column and begin from there.
+
+The lowest row is a mix of columns with and without gap, which is also possible. You can see where the text is, compared to the red overlay columns.
+
+The red overlay, is an additional layer that I use for layouting and can toggle - not included in plugin, but built with the plugin.
+
 ## Usage
 
 This plugin uses the `screen` key in your Tailwind config’s `theme`. You can choose to configure it for only some of the screens, if your grid is consistent throughout multiple screens.
