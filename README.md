@@ -87,7 +87,7 @@ All of the above can be changed via an object provided to the plugin in `tailwin
 // tailwind.config.js
 module.exports = {
     plugins: [
-        require('tailwindcss-vw-flexbox-grid')({
+        require('@arnars/tailwindcss-vw-flexbox-grid')({
             // Add options here
         }),
     ],
