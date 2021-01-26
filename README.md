@@ -40,7 +40,7 @@ module.exports = {
             '2xl': '1536px',
         },
     },
-    plugins: [require('tailwindcss-vw-flexbox-grid')()],
+    plugins: [require('@arnars/tailwindcss-vw-flexbox-grid')({})],
 };
 ```
 
