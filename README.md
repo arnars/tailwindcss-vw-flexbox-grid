@@ -112,23 +112,46 @@ module.exports = {
 .row {
     /* Handy wrapper for columns */
 }
+
 .col {
     /* Configuration class - needs to be there if you use col-x */
 }
+
 .col-gapless {
     /* Configuration class - needs to be there if you use col-gapless-x */
 }
+
 .col-x {
     /* Column - The x decides the width of your column */
 }
+.col-half {
+    /* Column - Half width of all cols in all screens */
+}
+.col-full {
+    /* Column - Full width of all cols in all screens */
+}
+
 .col-gapless-x {
     /* Column - The x decides the width of your column */
 }
+.col-gapless-half {
+    /* Column - Half width of all cols in all screens */
+}
+.col-gapless-full {
+    /* Column - Full width of all cols in all screens */
+}
+
 .indent-left-x {
     /* Indentation for columns - The x decides how many columns you want to indent */
 }
 .indent-right-x {
     /* Indentation for columns - The x decides how many columns you want to indent */
+}
+.indent-left-half {
+    /* Indentation for columns - Half width of all columns */
+}
+.indent-right-half {
+    /* Indentation for columns - Half width of all columns */
 }
 ```
 

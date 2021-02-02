@@ -192,11 +192,11 @@ module.exports = plugin.withOptions(
                         // Generate indent rules
                         const indentRules = [...new Array(columns)].reduce(
                             (cAcc, cItem, cIndex) => {
-                                // Only up to one below max
-                                if (cIndex + 1 < columns) {
-                                    // Number
-                                    const count = cIndex + 1;
+                                // Number
+                                const count = cIndex + 1;
 
+                                // Only up to one below max
+                                if (count < columns) {
                                     // Accumulate
                                     cAcc = {
                                         ...cAcc,
@@ -208,6 +208,21 @@ module.exports = plugin.withOptions(
                                         },
                                     };
                                 }
+
+                                // Add col-half rule in half index
+                                if (count === columns / 2) {
+                                    // Accumulate
+                                    cAcc = {
+                                        ...cAcc,
+                                        [`.indent-left-half`]: {
+                                            marginLeft: `calc((${pageWidth} - 2 * ${pageGap}) / ${columns} * ${count})`,
+                                        },
+                                        [`.indent-right-half`]: {
+                                            marginRight: `calc((${pageWidth} - 2 * ${pageGap}) / ${columns} * ${count})`,
+                                        },
+                                    };
+                                }
+
                                 return cAcc;
                             },
                             {}
@@ -252,10 +267,11 @@ module.exports = plugin.withOptions(
                         // Generate column rules
                         const colRules = [...new Array(columns)].reduce(
                             (cAcc, cItem, cIndex) => {
-                                if (cIndex < columns) {
-                                    // Number
-                                    const count = cIndex + 1;
+                                // Column number
+                                const count = cIndex + 1;
 
+                                // Add column rules
+                                if (count <= columns) {
                                     // Accumulate
                                     cAcc = {
                                         ...cAcc,
@@ -264,6 +280,38 @@ module.exports = plugin.withOptions(
                                             minWidth: `calc(((${pageMinWidth} - 2 * ${pageGap}) / ${columns} * ${count}) - (2 * ${columnGap}))`,
                                         },
                                         [`.col-gapless-${count}`]: {
+                                            width: `calc(((${pageWidth} - 2 * ${pageGap}) / ${columns} * ${count}))`,
+                                            minWidth: `calc(((${pageMinWidth} - 2 * ${pageGap}) / ${columns} * ${count}))`,
+                                        },
+                                    };
+                                }
+
+                                // Add col-full rule in last index
+                                if (count === columns) {
+                                    // Accumulate
+                                    cAcc = {
+                                        ...cAcc,
+                                        [`.col-full`]: {
+                                            width: `calc(((${pageWidth} - 2 * ${pageGap}) / ${columns} * ${count}) - (2 * ${columnGap}))`,
+                                            minWidth: `calc(((${pageMinWidth} - 2 * ${pageGap}) / ${columns} * ${count}) - (2 * ${columnGap}))`,
+                                        },
+                                        [`.col-gapless-full`]: {
+                                            width: `calc(((${pageWidth} - 2 * ${pageGap}) / ${columns} * ${count}))`,
+                                            minWidth: `calc(((${pageMinWidth} - 2 * ${pageGap}) / ${columns} * ${count}))`,
+                                        },
+                                    };
+                                }
+
+                                // Add col-half rule in half index
+                                if (count === columns / 2) {
+                                    // Accumulate
+                                    cAcc = {
+                                        ...cAcc,
+                                        [`.col-half`]: {
+                                            width: `calc(((${pageWidth} - 2 * ${pageGap}) / ${columns} * ${count}) - (2 * ${columnGap}))`,
+                                            minWidth: `calc(((${pageMinWidth} - 2 * ${pageGap}) / ${columns} * ${count}) - (2 * ${columnGap}))`,
+                                        },
+                                        [`.col-gapless-half`]: {
                                             width: `calc(((${pageWidth} - 2 * ${pageGap}) / ${columns} * ${count}))`,
                                             minWidth: `calc(((${pageMinWidth} - 2 * ${pageGap}) / ${columns} * ${count}))`,
                                         },
