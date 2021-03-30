@@ -153,6 +153,12 @@ module.exports = {
 .indent-right-half {
     /* Indentation for columns - Half width of all columns */
 }
+.indent-left-0 {
+    /* Indentation for columns - Reset indentation */
+}
+.indent-right-0 {
+    /* Indentation for columns - Reset indentation */
+}
 ```
 
 ### Additional classes - tooling

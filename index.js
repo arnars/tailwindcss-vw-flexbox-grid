@@ -7,7 +7,7 @@ const remInPx = (num, name = false) => ({
 const defaultOptions = {
     screens: [null, 'md', 'lg', '2xl'],
     columns: [4, 6, 12, 12],
-    pageWidths: ['100vw', '100vw', '100vw', 1440],
+    pageWidths: ['100vw', '100vw', '98vw', 1440],
     columnGaps: [12, 12, 12, 12],
     pageGaps: [12, 12, 12, 12],
     pageMaxWidth: 1440,
@@ -71,6 +71,29 @@ module.exports = plugin.withOptions(
                             }),
                             {}
                         ),
+                    },
+                    '.nested-row': {
+                        display: 'flex',
+                        ...mediaQueries.reduce(
+                            (acc, item, index) => ({
+                                ...acc,
+                                [item]: {
+                                    marginLeft: `-${
+                                        options.columnGaps[index] / 16
+                                    }rem`,
+                                    marginRight: `-${
+                                        options.columnGaps[index] / 16
+                                    }rem`,
+                                },
+                            }),
+                            {}
+                        ),
+                    },
+                    '.indent-right-0': {
+                        marginRight: 0,
+                    },
+                    '.indent-left-0': {
+                        marginLeft: 0,
                     },
                 },
                 { variants: ['responsive'] }
